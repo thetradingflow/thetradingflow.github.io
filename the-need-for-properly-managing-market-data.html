@@ -88,7 +88,7 @@
 <p>For example, one could rely on a data provider&#8217;s data and metadata to update a database automatically (eg, using <span class="caps">CSI</span>, Norgate, Bloomberg&#8230;) and be done with it. After all, it&#8217;s their job to ensure data is accurate and timely&nbsp;delivered.</p>
 <p>I find it risky and know I can&#8217;t trust anyone to manage my data for me. I&#8217;ve designed an automated workflow which includes multiple layers of&nbsp;safeguards:</p>
 <ul>
-<li>I update both data and metadata each day from each data provider to get the most up-to-data information (one can argue about the need to update metadata so frequently, but I prefer to explictly update it and handle it rather than assuming it hasn&#8217;t&nbsp;changed)</li>
+<li>I update both data and metadata each day from each data provider to get the most up-to-date information (one can argue about the need to update metadata so frequently, but I prefer to explictly update it and handle it rather than assuming it hasn&#8217;t&nbsp;changed)</li>
 <li>I try to have two data providers for comparison&nbsp;purposes</li>
 <li>I have fixed master tables which represent the source of truth for metadata (updated only manually when&nbsp;needed)</li>
 <li>I run a battery of data sanity checks on the data to capture potential issues (price spikes, missing data, weird <span class="caps">OHLC</span>&nbsp;relationships&#8230;)</li>
