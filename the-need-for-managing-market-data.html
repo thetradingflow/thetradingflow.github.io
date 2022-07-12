@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="https://www.thetradler.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://www.thetradler.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -17,16 +17,16 @@
 
 <meta name="keywords" content="market_data, futures, market_data, " />
 
-<meta property="og:title" content="How to install Norgate Data Updater on Ubuntu? "/>
-<meta property="og:url" content="https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu" />
-<meta property="og:description" content="I’m a happy subscriber to NorgateData’s Futures package. However, its software called NDU only works on Windows and I only work on Ubuntu. Tough world. Laziness made me consider renting a Windows server that would just run NDU and rsync the extracted data to my Ubuntu server, but …" />
+<meta property="og:title" content="The need for managing market data "/>
+<meta property="og:url" content="/the-need-for-managing-market-data" />
+<meta property="og:description" content="Managing market data is a crucial step for any automated futures trading program. A lot of things can go wrong considering the pecularities of most markets, the large number of individual contracts with sometimes changing characteristics and the need to roll out of contracts prior to expiration. Given how much …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
-<meta property="og:article:published_time" content="2022-07-04T00:00:00+02:00" />
-<meta name="twitter:title" content="How to install Norgate Data Updater on Ubuntu? ">
-<meta name="twitter:description" content="I’m a happy subscriber to NorgateData’s Futures package. However, its software called NDU only works on Windows and I only work on Ubuntu. Tough world. Laziness made me consider renting a Windows server that would just run NDU and rsync the extracted data to my Ubuntu server, but …">
+<meta property="og:article:published_time" content="2022-07-12T00:00:00+02:00" />
+<meta name="twitter:title" content="The need for managing market data ">
+<meta name="twitter:description" content="Managing market data is a crucial step for any automated futures trading program. A lot of things can go wrong considering the pecularities of most markets, the large number of individual contracts with sometimes changing characteristics and the need to roll out of contracts prior to expiration. Given how much …">
 
-        <title>How to install Norgate Data Updater on Ubuntu?  · The Tradler
+        <title>The need for managing market data  · The Tradler
 </title>
 
 
@@ -42,20 +42,20 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://www.thetradler.com/"><span class=site-name>The Tradler</span></a>
+                        <a class="brand" href="/"><span class=site-name>The Tradler</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://www.thetradler.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://www.thetradler.com/about">About</a></li>
-                                <li ><a href="https://www.thetradler.com/futures-trading">Futures&nbsp;Trading</a></li>
-                                <li ><a href="https://www.thetradler.com/categories.html">Categories</a></li>
-                                <li ><a href="https://www.thetradler.com/tags.html">Tags</a></li>
-                                <li ><a href="https://www.thetradler.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://www.thetradler.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/about">About</a></li>
+                                <li ><a href="/futures-trading">Futures&nbsp;Trading</a></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu">
-                How to install Norgate Data Updater on&nbsp;Ubuntu?
+            <a href="/the-need-for-managing-market-data">
+                The need for managing market&nbsp;data
             </a>
         </h1>
     </header>
@@ -79,29 +79,37 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>I&#8217;m a happy subscriber to NorgateData&#8217;s Futures&nbsp;package.</p>
-<p>However, its software called <span class="caps">NDU</span> only works on Windows and I only work on&nbsp;Ubuntu.</p>
-<p>Tough&nbsp;world.</p>
-<p>Laziness made me consider renting a Windows server that would just run <span class="caps">NDU</span> and rsync the extracted data to my Ubuntu server, but the server + Windows license amount to 50% of the cost of the&nbsp;data.</p>
-<p>I made it a point to not be lazy and stay cheap. Thanks to Wine, I was able to make <span class="caps">NDU</span> work on my Ubuntu machine and, surprisingly, it went rather&nbsp;smoothly.</p>
-<p>Here&#8217;s what I&nbsp;did:</p>
-<p>Install <a href="https://linuxize.com/post/how-to-install-wine-on-ubuntu-20-04/">Wine</a></p>
-<p>Download <a href="https://norgatedata.com/downloads/ndu.4.2.1.50.setup.exe"><span class="caps">NDU</span></a></p>
-<p>Execute this command in the&nbsp;terminal:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;YOUR_PATH_TO/ndu.4.2.1.50.setup.exe&quot;</span>
-</code></pre></div>
-
-<p>Start <span class="caps">NDU</span> as a regular program, enter your credentials, check for updates, and boom! You&#8217;re&nbsp;done.</p>
+            <div class="toc">
+<ul></ul>
+</div>
+<p>Managing market data is a crucial step for any automated futures trading&nbsp;program. </p>
+<p>A lot of things can go wrong considering the pecularities of most markets, the large number of individual contracts with sometimes changing characteristics and the need to roll out of contracts prior to expiration. Given how much leverage is involved in trading futures, sending the wrong orders to the market can have potentially disastrous financial&nbsp;consequences.</p>
+<p>My approach to managing market data is to be as explicit and defensive as&nbsp;possible.</p>
+<p>For example, one could rely on a data provider&#8217;s data and metadata to update a database automatically (eg, using <span class="caps">CSI</span>, Norgate, Bloomberg&#8230;) and be done with it. After all, it&#8217;s their job to ensure data is accurate and timely&nbsp;delivered.</p>
+<p>I find it risky and know I can&#8217;t trust anyone to manage my data for me. Instead, I&#8217;ve designed an automated workflow which includes multiple layers of&nbsp;safeguards:</p>
+<ul>
+<li>I update both data and metadata each day from each data provider to get the most up-to-data information (one can argue about the need to update metadata so frequently, but I prefer to explictly update it and handle it rather than assuming it hasn&#8217;t&nbsp;changed)</li>
+<li>I try to have two data providers for comparison&nbsp;purposes</li>
+<li>I have fixed master tables which represent the source of truth for metadata (updated manually when&nbsp;needed)</li>
+<li>I run a battery of data sanity checks on the data to capture potential issues (price spikes, missing data, weird <span class="caps">OHLC</span>&nbsp;relationships&#8230;)</li>
+<li>I compare the new metadata to the master table&#8217;s metadata to ensure they both agree with each&nbsp;other</li>
+<li>I set hard limits to market positions and order sizes to prevent any &#8220;fat finger&#8221;&nbsp;event</li>
+<li>I reconcile my P&amp;L, positions, orders, transactions and capital every day (broker data versus simulation&nbsp;data)</li>
+<li>I log data and metadata changes over&nbsp;time</li>
+<li>I generate summary reports for these checks and the&nbsp;results</li>
+<li>The workflow is stopped if it encounters certain events (eg, a change in a market&#8217;s multiplier would require a manual intervention for the workflow to&nbsp;resume)</li>
+<li>&#8230;</li>
+</ul>
+<p>I&#8217;m not anal about data quality however, all I&#8217;m trying to do is to reasonably protect my trading program against the impact of garbage input data and metadata. When implemented and calibrated properly, speaking from experience running a similar workflow for a fund for many years, this automated workflow captures most suspicious data/metadata events without requiring much work from me. Knowing that it explicitly runs all these checks gives me peace of mind&nbsp;too.</p>
+<p>As the German&nbsp;say: </p>
+<blockquote>
+<p>Trust is good, control is&nbsp;better.</p>
+</blockquote>
 
 
              
  
-                <p id="post-share-links">
-    Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=How%20to%20install%20Norgate%20Data%20Updater%20on%C2%A0Ubuntu%3F&url=https%3A//www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu&hashtags=market_data,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=How%20to%20install%20Norgate%20Data%20Updater%20on%C2%A0Ubuntu%3F&amp;body=https%3A//www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
+            
             
             
 
@@ -115,47 +123,46 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://www.thetradler.com/market-data" title="Market Data">Market Data</a></li>
-<li><a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
-<li><a href="https://www.thetradler.com/the-need-for-properly-managing-market-data" title="The need for properly managing market data">The need for properly managing market data</a></li>
+<li><a href="/market-data" title="Market Data">Market Data</a></li>
+<li><a href="/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
+<li><a href="/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.thetradler.com/market-data" title="Previous: Market Data">Market Data</a></li>
-                <li class="next-article"><a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="Next: How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a> »</li>
+                <li class="previous-article">« <a href="/how-to-access-norgatedata-library-from-ubuntu" title="Previous: How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-07-04T00:00:00+02:00">2022-07-04</time>
+            <time itemprop="dateCreated" datetime="2022-07-12T00:00:00+02:00">2022-07-12</time>
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
             <li >
-            <a href="https://www.thetradler.com/market-data" title="Market&nbsp;Data">Part 1: Market&nbsp;Data</a>
+            <a href="/market-data" title="Market&nbsp;Data">Part 1: Market&nbsp;Data</a>
+            </li>
+            <li >
+            <a href="/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on&nbsp;Ubuntu?">Part 2: How to install Norgate Data Updater on&nbsp;Ubuntu?</a>
+            </li>
+            <li >
+            <a href="/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from&nbsp;Ubuntu?">Part 3: How to access norgatedata library from&nbsp;Ubuntu?</a>
             </li>
             <li  class="active-part">
-            Part 2: How to install Norgate Data Updater on&nbsp;Ubuntu?
-            </li>
-            <li >
-            <a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from&nbsp;Ubuntu?">Part 3: How to access norgatedata library from&nbsp;Ubuntu?</a>
-            </li>
-            <li >
-            <a href="https://www.thetradler.com/the-need-for-properly-managing-market-data" title="The need for properly managing market&nbsp;data">Part 4: The need for properly managing market&nbsp;data</a>
+            Part 4: The need for managing market&nbsp;data
             </li>
     </ul>
             <h4>Category</h4>
-            <a class="category-link" href="https://www.thetradler.com/categories.html#market_data-ref">market_data</a>
+            <a class="category-link" href="/categories.html#market_data-ref">market_data</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://www.thetradler.com/tags.html#futures-ref">futures
+                <li><a href="/tags.html#futures-ref">futures
                     <span class="superscript">3</span>
 </a></li>
-                <li><a href="https://www.thetradler.com/tags.html#market_data-ref">market_data
+                <li><a href="/tags.html#market_data-ref">market_data
                     <span class="superscript">4</span>
 </a></li>
             </ul>
@@ -261,7 +268,7 @@
     </div>
 </footer>            <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://www.thetradler.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script src="/theme/js/elegant.prod.9e9d5ce754.js"></script>
         <script>
             function validateForm(query)
             {

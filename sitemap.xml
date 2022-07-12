@@ -4,99 +4,106 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>/</loc>
-<lastmod>2022-07-11T19:48:24-00:00</lastmod>
+<loc>https://www.thetradler.com/</loc>
+<lastmod>2022-07-12T11:00:30-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tags.html</loc>
-<lastmod>2022-07-11T19:48:24-00:00</lastmod>
+<loc>https://www.thetradler.com/tags.html</loc>
+<lastmod>2022-07-12T11:00:30-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/categories.html</loc>
-<lastmod>2022-07-11T19:48:24-00:00</lastmod>
+<loc>https://www.thetradler.com/categories.html</loc>
+<lastmod>2022-07-12T11:00:30-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/authors.html</loc>
-<lastmod>2022-07-11T19:48:24-00:00</lastmod>
+<loc>https://www.thetradler.com/authors.html</loc>
+<lastmod>2022-07-12T11:00:30-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/archives.html</loc>
-<lastmod>2022-07-11T19:48:24-00:00</lastmod>
+<loc>https://www.thetradler.com/archives.html</loc>
+<lastmod>2022-07-12T11:00:30-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/about</loc>
+<loc>https://www.thetradler.com/about</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/futures-trading</loc>
+<loc>https://www.thetradler.com/futures-trading</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/how-to-access-norgatedata-library-from-ubuntu</loc>
+<loc>https://www.thetradler.com/the-need-for-properly-managing-market-data</loc>
+<lastmod>2022-07-12T00:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/how-to-install-norgate-data-updater-on-ubuntu</loc>
+<loc>https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu</loc>
 <lastmod>2022-07-04T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/market-data</loc>
+<loc>https://www.thetradler.com/market-data</loc>
 <lastmod>2022-07-01T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/market_data.html</loc>
-<lastmod>2022-07-11T00:00:00+00:53</lastmod>
+<loc>https://www.thetradler.com/category/market_data.html</loc>
+<lastmod>2022-07-12T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/market_data.html</loc>
-<lastmod>2022-07-11T00:00:00+00:53</lastmod>
+<loc>https://www.thetradler.com/tag/market_data.html</loc>
+<lastmod>2022-07-12T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/futures.html</loc>
-<lastmod>2022-07-11T00:00:00+00:53</lastmod>
+<loc>https://www.thetradler.com/tag/futures.html</loc>
+<lastmod>2022-07-12T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/author/the-tradler.html</loc>
-<lastmod>2022-07-11T00:00:00+00:53</lastmod>
+<loc>https://www.thetradler.com/author/the-tradler.html</loc>
+<lastmod>2022-07-12T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
