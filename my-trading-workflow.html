@@ -15,18 +15,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="market_data, futures, market_data, " />
+<meta name="keywords" content="trading_workflow, futures, trading_workflow, " />
 
-<meta property="og:title" content="The need for properly managing market data "/>
-<meta property="og:url" content="https://www.thetradler.com/the-need-for-properly-managing-market-data" />
-<meta property="og:description" content="Managing market data is a crucial step for any automated futures trading program. A lot of things can go wrong considering the pecularities of futures markets, the large number of individual contracts with sometimes changing characteristics, and the need to roll out of contracts prior to expiration. Given how much …" />
+<meta property="og:title" content="My trading workflow "/>
+<meta property="og:url" content="https://www.thetradler.com/my-trading-workflow" />
+<meta property="og:description" content="My trading workflow is composed of 4 main modules, each with a clear set of responsibilities: market_data: updates the market data database. It extracts forex and futures data and metadata from IB Gateway and updates the production database. account_data: updates the account data database. It extracts the account …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
-<meta property="og:article:published_time" content="2022-07-12T00:00:00+02:00" />
-<meta name="twitter:title" content="The need for properly managing market data ">
-<meta name="twitter:description" content="Managing market data is a crucial step for any automated futures trading program. A lot of things can go wrong considering the pecularities of futures markets, the large number of individual contracts with sometimes changing characteristics, and the need to roll out of contracts prior to expiration. Given how much …">
+<meta property="og:article:published_time" content="2022-07-13T00:00:00+02:00" />
+<meta name="twitter:title" content="My trading workflow ">
+<meta name="twitter:description" content="My trading workflow is composed of 4 main modules, each with a clear set of responsibilities: market_data: updates the market data database. It extracts forex and futures data and metadata from IB Gateway and updates the production database. account_data: updates the account data database. It extracts the account …">
 
-        <title>The need for properly managing market data  · The Tradler
+        <title>My trading workflow  · The Tradler
 </title>
 
 
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.thetradler.com/the-need-for-properly-managing-market-data">
-                The need for properly managing market&nbsp;data
+            <a href="https://www.thetradler.com/my-trading-workflow">
+                My trading&nbsp;workflow
             </a>
         </h1>
     </header>
@@ -79,42 +79,29 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <div class="toc">
-<ul></ul>
-</div>
-<p>Managing market data is a crucial step for any automated futures trading&nbsp;program. </p>
-<p>A lot of things can go wrong considering the pecularities of futures markets, the large number of individual contracts with sometimes changing characteristics, and the need to roll out of contracts prior to expiration. Given how much leverage is involved in trading futures, sending the wrong orders to the market can have potentially disastrous financial&nbsp;consequences.</p>
-<p>My approach to managing market data is to be as explicit and defensive as&nbsp;possible.</p>
-<p>For example, one could rely on a data provider&#8217;s data and metadata to update a database automatically (eg, using <span class="caps">CSI</span>, Norgate, Bloomberg&#8230;) and be done with it. After all, it&#8217;s their job to ensure data is accurate and timely&nbsp;delivered.</p>
-<p>I find it risky and know I can&#8217;t trust anyone to manage my data for me. I&#8217;ve designed an automated workflow which includes multiple layers of&nbsp;safeguards:</p>
+            <p>My trading workflow is composed of 4 main modules, each with a clear set of&nbsp;responsibilities:</p>
 <ul>
-<li>I update both data and metadata each day from each data provider to get the most up-to-date information (one can argue about the need to update metadata so frequently, but I prefer to explictly update it and handle it rather than assuming it hasn&#8217;t&nbsp;changed)</li>
-<li>I try to have two data providers for comparison&nbsp;purposes</li>
-<li>I have fixed master tables which represent the source of truth for metadata (updated only manually when&nbsp;needed)</li>
-<li>I run a battery of data sanity checks on the data to capture potential issues (price spikes, missing data, weird <span class="caps">OHLC</span>&nbsp;relationships&#8230;)</li>
-<li>I compare the new metadata to the master table&#8217;s metadata to ensure they both agree with each&nbsp;other</li>
-<li>I set hard limits to market positions and order sizes to prevent any &#8220;fat finger&#8221;&nbsp;event</li>
-<li>I reconcile my P&amp;L, positions, orders, transactions and capital every day (broker data versus simulation&nbsp;data)</li>
-<li>I log data and metadata changes over&nbsp;time</li>
-<li>I generate summary reports for these checks and the&nbsp;results</li>
-<li>The workflow is stopped if it encounters certain events (eg, a change in a market&#8217;s multiplier would require a manual intervention for the workflow to&nbsp;resume)</li>
-<li>&#8230;</li>
+<li><code>market_data</code>: updates the market data database. It extracts forex and futures data and metadata from <span class="caps">IB</span> Gateway and updates the production&nbsp;database.</li>
+<li><code>account_data</code>: updates the account data database. It extracts the account&#8217;s capital, P&amp;L, orders, transactions, and positions from the broker. It reconciles these values against internal calculations for&nbsp;accuracy.</li>
+<li><code>signal_generator</code>: ingests market data and produces a model portfolio, ie a target weight for each continuous futures in its&nbsp;universe.</li>
+<li><code>order_engine</code>: ingests the model portfolio, market and account data and produces a set of orders to submit to the broker. These orders include roll and rebalancing orders for the following trading&nbsp;day.</li>
 </ul>
-<p>I&#8217;m not anal about data quality however, all I&#8217;m trying to do is to reasonably protect my trading program against the impact of garbage input data and metadata. When implemented and calibrated properly, speaking from experience running a similar workflow for a fund for many years, it captures most suspicious data/metadata events without requiring much work from me. Knowing that it explicitly runs all these checks gives me peace of mind&nbsp;too.</p>
-<p>As the German&nbsp;say:</p>
-<blockquote>
-<p>Trust is good, control is&nbsp;better.</p>
-</blockquote>
-<p>This is certainly true for market&nbsp;data.</p>
+<p>Each module is executed at the end of each trading day after markets are closed at 4:15 pm <span class="caps">EST</span>.</p>
+<p>Whenever a critical event is trigerred by any of the 4 modules, I&#8217;m alerted on my phone and the workflow execution is paused until I manually resume it. Otherwise each module produces a report for the given day that I can quickly go through to see if anything out of the ordinary happened. Orders are then submitted automatically to the&nbsp;broker.</p>
+<p>In the future, I plan on adding a couple of&nbsp;modules:</p>
+<ul>
+<li><code>execution_engine</code>: an event-driven program whose responsibility will be to improve the execution of the orders and provide information about the quality of&nbsp;execution.</li>
+<li><code>reporting_engine</code>: generates additional reports for monitoring the health of the system (eg, rolling statistics on portfolio data, accounting/tax liability, market liquidity, performance of individual models, <span class="caps">IT</span> stuff like memory/cpu usage of the server,&nbsp;etc.).</li>
+</ul>
 
 
              
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=The%20need%20for%20properly%20managing%20market%C2%A0data&url=https%3A//www.thetradler.com/the-need-for-properly-managing-market-data&hashtags=market_data,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thetradler.com/the-need-for-properly-managing-market-data" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=The%20need%20for%20properly%20managing%20market%C2%A0data&amp;body=https%3A//www.thetradler.com/the-need-for-properly-managing-market-data" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=My%20trading%C2%A0workflow&url=https%3A//www.thetradler.com/my-trading-workflow&hashtags=trading_workflow,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thetradler.com/my-trading-workflow" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=My%20trading%C2%A0workflow&amp;body=https%3A//www.thetradler.com/my-trading-workflow" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -129,49 +116,38 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://www.thetradler.com/market-data" title="Market Data">Market Data</a></li>
 <li><a href="https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
 <li><a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
-<li><a href="https://www.thetradler.com/my-trading-workflow" title="My trading workflow">My trading workflow</a></li>
+<li><a href="https://www.thetradler.com/the-need-for-properly-managing-market-data" title="The need for properly managing market data">The need for properly managing market data</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="Previous: How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
-                <li class="next-article"><a href="https://www.thetradler.com/my-trading-workflow" title="Next: My trading workflow">My trading workflow</a> »</li>
+                <li class="previous-article">« <a href="https://www.thetradler.com/the-need-for-properly-managing-market-data" title="Previous: The need for properly managing market data">The need for properly managing market data</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-07-12T00:00:00+02:00">2022-07-12</time>
+            <time itemprop="dateCreated" datetime="2022-07-13T00:00:00+02:00">2022-07-13</time>
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
-            <li >
-            <a href="https://www.thetradler.com/market-data" title="Market&nbsp;Data">Part 1: Market&nbsp;Data</a>
-            </li>
-            <li >
-            <a href="https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on&nbsp;Ubuntu?">Part 2: How to install Norgate Data Updater on&nbsp;Ubuntu?</a>
-            </li>
-            <li >
-            <a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from&nbsp;Ubuntu?">Part 3: How to access norgatedata library from&nbsp;Ubuntu?</a>
-            </li>
             <li  class="active-part">
-            Part 4: The need for properly managing market&nbsp;data
+            Part 1: My trading&nbsp;workflow
             </li>
     </ul>
             <h4>Category</h4>
-            <a class="category-link" href="https://www.thetradler.com/categories.html#market_data-ref">market_data</a>
+            <a class="category-link" href="https://www.thetradler.com/categories.html#trading_workflow-ref">trading_workflow</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://www.thetradler.com/tags.html#futures-ref">futures
                     <span class="superscript">4</span>
 </a></li>
-                <li><a href="https://www.thetradler.com/tags.html#market_data-ref">market_data
-                    <span class="superscript">4</span>
+                <li><a href="https://www.thetradler.com/tags.html#trading_workflow-ref">trading_workflow
+                    <span class="superscript">1</span>
 </a></li>
             </ul>
 <h4>Contact</h4>
