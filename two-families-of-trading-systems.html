@@ -15,18 +15,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="market_data, futures, market_data, " />
+<meta name="keywords" content="trading_system, signal_generator, signal_generator, " />
 
-<meta property="og:title" content="How to access norgatedata library from Ubuntu? "/>
-<meta property="og:url" content="/how-to-access-norgatedata-library-from-ubuntu" />
-<meta property="og:description" content="Now that NDU works on my Ubuntu machine, I’m able to extract futures data to populate my research database. Annoyingly, NDU can’t extract futures metadata such as the first notice date, last trade date, and so on. It’s only possible to do it via a third party …" />
+<meta property="og:title" content="Two families of trading systems "/>
+<meta property="og:url" content="/two-families-of-trading-systems" />
+<meta property="og:description" content="From the trading system skeleton, I can construct two families of trading systems: 1. Binary trading systems (BTS)¶ A BTS enters into a position when its entry rule is triggered and holds it until its exit rule is triggered. The position size is held constant during the life of the …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
-<meta property="og:article:published_time" content="2022-07-11T00:00:00+02:00" />
-<meta name="twitter:title" content="How to access norgatedata library from Ubuntu? ">
-<meta name="twitter:description" content="Now that NDU works on my Ubuntu machine, I’m able to extract futures data to populate my research database. Annoyingly, NDU can’t extract futures metadata such as the first notice date, last trade date, and so on. It’s only possible to do it via a third party …">
+<meta property="og:article:published_time" content="2022-07-16T00:00:00+02:00" />
+<meta name="twitter:title" content="Two families of trading systems ">
+<meta name="twitter:description" content="From the trading system skeleton, I can construct two families of trading systems: 1. Binary trading systems (BTS)¶ A BTS enters into a position when its entry rule is triggered and holds it until its exit rule is triggered. The position size is held constant during the life of the …">
 
-        <title>How to access norgatedata library from Ubuntu?  · The Tradler
+        <title>Two families of trading systems  · The Tradler
 </title>
 
 
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="/how-to-access-norgatedata-library-from-ubuntu">
-                How to access norgatedata library from&nbsp;Ubuntu?
+            <a href="/two-families-of-trading-systems">
+                Two families of trading&nbsp;systems
             </a>
         </h1>
     </header>
@@ -79,50 +79,33 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>Now that <span class="caps">NDU</span> works on my Ubuntu machine, I&#8217;m able to extract futures data to populate my research database. Annoyingly, <span class="caps">NDU</span> can&#8217;t extract futures metadata such as the first notice date, last trade date, and so on. It&#8217;s only possible to do it via a third party program like&nbsp;Python.</p>
-<p>For whatever reason, my Python programs running on Ubuntu can&#8217;t access the <span class="caps">API</span> while <span class="caps">NDU</span> is running in&nbsp;Wine.</p>
-<p>Laziness made me consider running a Windows <span class="caps">VM</span> in a VirtualBox environment and only extract the metadata once every so often. I wasn&#8217;t really pleased with such a hacky solution. Then it hit me that I could simply install Python in Wine, automate the metadata extraction and be&nbsp;happy.</p>
-<p>So I installed Python in Wine and&#8230; it worked. A script later, the futures metadata is automatically updated on a daily&nbsp;basis.</p>
-<p>Sweat&nbsp;world.</p>
-<p>Here&#8217;s what I did, assuming you already have Wine and <span class="caps">NDU</span> installed and running on your Ubuntu&nbsp;machine:</p>
-<p>Download <a href="https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe">Windows x86-64 executable&nbsp;installer</a></p>
-<p>Open your Ubuntu terminal and&nbsp;run:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;YOUR_PATH_TO/python-3.7.0-amd64.exe&quot;</span>
-</code></pre></div>
-
-<p>Find the location of the python executable. Mine is installed&nbsp;here:</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37&quot;</span>
-</code></pre></div>
-
-<p>Run this command (don&#8217;t forget to replace the path with your&nbsp;own):</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install --upgrade pip
-</code></pre></div>
-
-<p>I&#8217;m not sure if you need to upgrade pip but that&#8217;s what I&nbsp;did.</p>
-<p>Run this&nbsp;command:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install norgatedata
-</code></pre></div>
-
-<p>Both Python 3.7 and the norgatedata package are installed. Run&nbsp;python:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span>
-</code></pre></div>
-
-<p>Run this code. If you have access to the <span class="caps">API</span>, it won&#8217;t&nbsp;fail:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">norgadatedata</span> <span class="k">as</span> <span class="nn">nd</span>
-
-<span class="n">nd</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="s2">&quot;CL-2020Z&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>It worked on my machine. Hope it will on&nbsp;yours.</p>
+            <p>From the trading system skeleton, I can construct two families of trading&nbsp;systems:</p>
+<h3 id="1-binary-trading-systems-bts">1. Binary trading systems (<span class="caps">BTS</span>)<a class="headerlink" href="#1-binary-trading-systems-bts" title="Permanent link">&para;</a></h3>
+<p>A <span class="caps">BTS</span> enters into a position when its entry rule is triggered and holds it until its exit rule is triggered. The position size is held constant during the life of the trade, and additional entry rule triggers are&nbsp;ignored.</p>
+<p>Example of a <span class="caps">BTS</span>:</p>
+<ul>
+<li>entry rule: buy at a 50-day close upside breakout if the close is greater than its 200-day moving&nbsp;average</li>
+<li>exit rule: hard stop-loss at 3 times the standard-deviation of the price changes over the last 20 days, exit on a 20-day close downside&nbsp;breakout</li>
+<li>sizing rule: risk 10 000 <span class="caps">USD</span></li>
+</ul>
+<h3 id="2-continuous-trading-systems-cts">2. Continuous trading systems (<span class="caps">CTS</span>)<a class="headerlink" href="#2-continuous-trading-systems-cts" title="Permanent link">&para;</a></h3>
+<p>Contrary to a <span class="caps">BTS</span>, a <span class="caps">CTS</span> updates its position size and exit rule every time its entry rule is triggered. By doing so, it removes the path-dependency associated with <span class="caps">BTS</span> at the cost of potentially higher turnover. A fully continuous trading systems has an entry rule which is always triggered, an exit rule which is never triggered, and a sizing rule which is a function of the signal strength, or volatility of the asset prices,&nbsp;etc.</p>
+<p>Example of a <span class="caps">CTS</span>:</p>
+<ul>
+<li>entry rule: always&nbsp;true</li>
+<li>exit rule: always&nbsp;false</li>
+<li>sizing rule: target 10 000 <span class="caps">USD</span> annualized volatility using a 35-day exponentially-weighted standard-deviation of price&nbsp;changes</li>
+</ul>
+<p><span class="caps">BTS</span> and <span class="caps">CTS</span> can be easily combined together into a portfolio of trading&nbsp;systems.</p>
 
 
              
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=How%20to%20access%20norgatedata%20library%20from%C2%A0Ubuntu%3F&url=/how-to-access-norgatedata-library-from-ubuntu&hashtags=market_data,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=/how-to-access-norgatedata-library-from-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=How%20to%20access%20norgatedata%20library%20from%C2%A0Ubuntu%3F&amp;body=/how-to-access-norgatedata-library-from-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Two%20families%20of%20trading%C2%A0systems&url=/two-families-of-trading-systems&hashtags=trading_system,signal_generator" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=/two-families-of-trading-systems" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Two%20families%20of%20trading%C2%A0systems&amp;body=/two-families-of-trading-systems" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -137,49 +120,43 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="/market-data" title="Market data">Market data</a></li>
-<li><a href="/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
-<li><a href="/the-need-for-properly-managing-market-data" title="The need for properly managing market data">The need for properly managing market data</a></li>
-<li><a href="/my-trading-workflow" title="My trading workflow">My trading workflow</a></li>
+<li><a href="/anatomy-of-a-trading-system" title="Anatomy of a trading system">Anatomy of a trading system</a></li>
+<li><a href="/signal-generator" title="Signal generator">Signal generator</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="/how-to-install-norgate-data-updater-on-ubuntu" title="Previous: How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
-                <li class="next-article"><a href="/the-need-for-properly-managing-market-data" title="Next: The need for properly managing market data">The need for properly managing market data</a> »</li>
+                <li class="previous-article">« <a href="/anatomy-of-a-trading-system" title="Previous: Anatomy of a trading system">Anatomy of a trading system</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-07-11T00:00:00+02:00">2022-07-11</time>
+            <time itemprop="dateCreated" datetime="2022-07-16T00:00:00+02:00">2022-07-16</time>
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
             <li >
-            <a href="/market-data" title="Market&nbsp;data">Part 1: Market&nbsp;data</a>
+            <a href="/signal-generator" title="Signal&nbsp;generator">Part 1: Signal&nbsp;generator</a>
             </li>
             <li >
-            <a href="/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on&nbsp;Ubuntu?">Part 2: How to install Norgate Data Updater on&nbsp;Ubuntu?</a>
+            <a href="/anatomy-of-a-trading-system" title="Anatomy of a trading&nbsp;system">Part 2: Anatomy of a trading&nbsp;system</a>
             </li>
             <li  class="active-part">
-            Part 3: How to access norgatedata library from&nbsp;Ubuntu?
-            </li>
-            <li >
-            <a href="/the-need-for-properly-managing-market-data" title="The need for properly managing market&nbsp;data">Part 4: The need for properly managing market&nbsp;data</a>
+            Part 3: Two families of trading&nbsp;systems
             </li>
     </ul>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#market_data-ref">market_data</a>
+            <a class="category-link" href="/categories.html#signal_generator-ref">signal_generator</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags.html#futures-ref">futures
-                    <span class="superscript">4</span>
+                <li><a href="/tags.html#signal_generator-ref">signal_generator
+                    <span class="superscript">3</span>
 </a></li>
-                <li><a href="/tags.html#market_data-ref">market_data
-                    <span class="superscript">4</span>
+                <li><a href="/tags.html#trading_system-ref">trading_system
+                    <span class="superscript">2</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

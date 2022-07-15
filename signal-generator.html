@@ -15,18 +15,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="market_data, futures, market_data, " />
+<meta name="keywords" content="signal_generator, signal_generator, " />
 
-<meta property="og:title" content="How to access norgatedata library from Ubuntu? "/>
-<meta property="og:url" content="/how-to-access-norgatedata-library-from-ubuntu" />
-<meta property="og:description" content="Now that NDU works on my Ubuntu machine, I’m able to extract futures data to populate my research database. Annoyingly, NDU can’t extract futures metadata such as the first notice date, last trade date, and so on. It’s only possible to do it via a third party …" />
+<meta property="og:title" content="Signal generator "/>
+<meta property="og:url" content="/signal-generator" />
+<meta property="og:description" content="The signal generator is responsible for producing a model portfolio, which is a set of optimal weights - one for each asset in the asset universe at a given timestamp. For example: asset1: 0.25 asset2: 0.10 asset3: -0.05 asset4: -0.10 Here’s a list of signal generator-related …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
-<meta property="og:article:published_time" content="2022-07-11T00:00:00+02:00" />
-<meta name="twitter:title" content="How to access norgatedata library from Ubuntu? ">
-<meta name="twitter:description" content="Now that NDU works on my Ubuntu machine, I’m able to extract futures data to populate my research database. Annoyingly, NDU can’t extract futures metadata such as the first notice date, last trade date, and so on. It’s only possible to do it via a third party …">
+<meta property="og:article:published_time" content="2022-07-15T00:00:00+02:00" />
+<meta name="twitter:title" content="Signal generator ">
+<meta name="twitter:description" content="The signal generator is responsible for producing a model portfolio, which is a set of optimal weights - one for each asset in the asset universe at a given timestamp. For example: asset1: 0.25 asset2: 0.10 asset3: -0.05 asset4: -0.10 Here’s a list of signal generator-related …">
 
-        <title>How to access norgatedata library from Ubuntu?  · The Tradler
+        <title>Signal generator  · The Tradler
 </title>
 
 
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="/how-to-access-norgatedata-library-from-ubuntu">
-                How to access norgatedata library from&nbsp;Ubuntu?
+            <a href="/signal-generator">
+                Signal&nbsp;generator
             </a>
         </h1>
     </header>
@@ -79,50 +79,26 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>Now that <span class="caps">NDU</span> works on my Ubuntu machine, I&#8217;m able to extract futures data to populate my research database. Annoyingly, <span class="caps">NDU</span> can&#8217;t extract futures metadata such as the first notice date, last trade date, and so on. It&#8217;s only possible to do it via a third party program like&nbsp;Python.</p>
-<p>For whatever reason, my Python programs running on Ubuntu can&#8217;t access the <span class="caps">API</span> while <span class="caps">NDU</span> is running in&nbsp;Wine.</p>
-<p>Laziness made me consider running a Windows <span class="caps">VM</span> in a VirtualBox environment and only extract the metadata once every so often. I wasn&#8217;t really pleased with such a hacky solution. Then it hit me that I could simply install Python in Wine, automate the metadata extraction and be&nbsp;happy.</p>
-<p>So I installed Python in Wine and&#8230; it worked. A script later, the futures metadata is automatically updated on a daily&nbsp;basis.</p>
-<p>Sweat&nbsp;world.</p>
-<p>Here&#8217;s what I did, assuming you already have Wine and <span class="caps">NDU</span> installed and running on your Ubuntu&nbsp;machine:</p>
-<p>Download <a href="https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe">Windows x86-64 executable&nbsp;installer</a></p>
-<p>Open your Ubuntu terminal and&nbsp;run:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;YOUR_PATH_TO/python-3.7.0-amd64.exe&quot;</span>
+            <p>The signal generator is responsible for producing a model portfolio, which is a set of optimal weights - one for each asset in the asset universe at a given timestamp. For&nbsp;example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">asset1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.25</span><span class="w"></span>
+<span class="nt">asset2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.10</span><span class="w"></span>
+<span class="nt">asset3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.05</span><span class="w"></span>
+<span class="nt">asset4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.10</span><span class="w"></span>
 </code></pre></div>
 
-<p>Find the location of the python executable. Mine is installed&nbsp;here:</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37&quot;</span>
-</code></pre></div>
-
-<p>Run this command (don&#8217;t forget to replace the path with your&nbsp;own):</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install --upgrade pip
-</code></pre></div>
-
-<p>I&#8217;m not sure if you need to upgrade pip but that&#8217;s what I&nbsp;did.</p>
-<p>Run this&nbsp;command:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install norgatedata
-</code></pre></div>
-
-<p>Both Python 3.7 and the norgatedata package are installed. Run&nbsp;python:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span>
-</code></pre></div>
-
-<p>Run this code. If you have access to the <span class="caps">API</span>, it won&#8217;t&nbsp;fail:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">norgadatedata</span> <span class="k">as</span> <span class="nn">nd</span>
-
-<span class="n">nd</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="s2">&quot;CL-2020Z&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>It worked on my machine. Hope it will on&nbsp;yours.</p>
+<p>Here&#8217;s a list of signal generator-related&nbsp;articles:</p>
+<ul>
+<li><a class="ampl" href="/anatomy-of-a-trading-system">Anatomy of a trading&nbsp;system</a></li>
+</ul>
 
 
              
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=How%20to%20access%20norgatedata%20library%20from%C2%A0Ubuntu%3F&url=/how-to-access-norgatedata-library-from-ubuntu&hashtags=market_data,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=/how-to-access-norgatedata-library-from-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=How%20to%20access%20norgatedata%20library%20from%C2%A0Ubuntu%3F&amp;body=/how-to-access-norgatedata-library-from-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Signal%C2%A0generator&url=/signal-generator&hashtags=signal_generator" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=/signal-generator" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Signal%C2%A0generator&amp;body=/signal-generator" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -137,49 +113,37 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="/market-data" title="Market data">Market data</a></li>
-<li><a href="/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
-<li><a href="/the-need-for-properly-managing-market-data" title="The need for properly managing market data">The need for properly managing market data</a></li>
-<li><a href="/my-trading-workflow" title="My trading workflow">My trading workflow</a></li>
+<li><a href="/anatomy-of-a-trading-system" title="Anatomy of a trading system">Anatomy of a trading system</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="/how-to-install-norgate-data-updater-on-ubuntu" title="Previous: How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
-                <li class="next-article"><a href="/the-need-for-properly-managing-market-data" title="Next: The need for properly managing market data">The need for properly managing market data</a> »</li>
+                <li class="previous-article">« <a href="/my-trading-workflow" title="Previous: My trading workflow">My trading workflow</a></li>
+                <li class="next-article"><a href="/anatomy-of-a-trading-system" title="Next: Anatomy of a trading system">Anatomy of a trading system</a> »</li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-07-11T00:00:00+02:00">2022-07-11</time>
+            <time itemprop="dateCreated" datetime="2022-07-15T00:00:00+02:00">2022-07-15</time>
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
-            <li >
-            <a href="/market-data" title="Market&nbsp;data">Part 1: Market&nbsp;data</a>
-            </li>
-            <li >
-            <a href="/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on&nbsp;Ubuntu?">Part 2: How to install Norgate Data Updater on&nbsp;Ubuntu?</a>
-            </li>
             <li  class="active-part">
-            Part 3: How to access norgatedata library from&nbsp;Ubuntu?
+            Part 1: Signal&nbsp;generator
             </li>
             <li >
-            <a href="/the-need-for-properly-managing-market-data" title="The need for properly managing market&nbsp;data">Part 4: The need for properly managing market&nbsp;data</a>
+            <a href="/anatomy-of-a-trading-system" title="Anatomy of a trading&nbsp;system">Part 2: Anatomy of a trading&nbsp;system</a>
             </li>
     </ul>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#market_data-ref">market_data</a>
+            <a class="category-link" href="/categories.html#signal_generator-ref">signal_generator</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags.html#futures-ref">futures
-                    <span class="superscript">4</span>
-</a></li>
-                <li><a href="/tags.html#market_data-ref">market_data
-                    <span class="superscript">4</span>
+                <li><a href="/tags.html#signal_generator-ref">signal_generator
+                    <span class="superscript">2</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

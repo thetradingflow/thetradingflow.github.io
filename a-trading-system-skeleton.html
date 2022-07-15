@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://www.thetradler.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://www.thetradler.com/theme/css/custom.css" media="screen">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -15,18 +15,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="market_data, futures, market_data, " />
+<meta name="keywords" content="trading_system, trading_system, " />
 
-<meta property="og:title" content="How to install Norgate Data Updater on Ubuntu? "/>
-<meta property="og:url" content="/how-to-install-norgate-data-updater-on-ubuntu" />
-<meta property="og:description" content="I’m a happy subscriber to NorgateData’s Futures package. However, its software called NDU only works on Windows and I only work on Ubuntu. Tough world. Laziness made me consider renting a Windows server that would just run NDU and rsync the extracted data to my Ubuntu server, but …" />
+<meta property="og:title" content="A trading system skeleton "/>
+<meta property="og:url" content="https://www.thetradler.com/a-trading-system-skeleton" />
+<meta property="og:description" content="A trading system (TS) is defined by 3 components: an entry rule a sizing rule an exit rule A TS is always: unidirectional: long-only or short-only applied to a single asset executed at no cost at the current bar’s closing price (ie, no delay) From this skeleton I can …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
-<meta property="og:article:published_time" content="2022-07-04T00:00:00+02:00" />
-<meta name="twitter:title" content="How to install Norgate Data Updater on Ubuntu? ">
-<meta name="twitter:description" content="I’m a happy subscriber to NorgateData’s Futures package. However, its software called NDU only works on Windows and I only work on Ubuntu. Tough world. Laziness made me consider renting a Windows server that would just run NDU and rsync the extracted data to my Ubuntu server, but …">
+<meta property="og:article:published_time" content="2022-07-13T00:00:00+02:00" />
+<meta name="twitter:title" content="A trading system skeleton ">
+<meta name="twitter:description" content="A trading system (TS) is defined by 3 components: an entry rule a sizing rule an exit rule A TS is always: unidirectional: long-only or short-only applied to a single asset executed at no cost at the current bar’s closing price (ie, no delay) From this skeleton I can …">
 
-        <title>How to install Norgate Data Updater on Ubuntu?  · The Tradler
+        <title>A trading system skeleton  · The Tradler
 </title>
 
 
@@ -42,20 +42,20 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="/"><span class=site-name>The Tradler</span></a>
+                        <a class="brand" href="https://www.thetradler.com/"><span class=site-name>The Tradler</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       "/"
+                                       https://www.thetradler.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="/about">About</a></li>
-                                <li ><a href="/futures-trading">Futures&nbsp;Trading</a></li>
-                                <li ><a href="/categories.html">Categories</a></li>
-                                <li ><a href="/tags.html">Tags</a></li>
-                                <li ><a href="/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://www.thetradler.com/about">About</a></li>
+                                <li ><a href="https://www.thetradler.com/futures-trading">Futures&nbsp;Trading</a></li>
+                                <li ><a href="https://www.thetradler.com/categories.html">Categories</a></li>
+                                <li ><a href="https://www.thetradler.com/tags.html">Tags</a></li>
+                                <li ><a href="https://www.thetradler.com/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://www.thetradler.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="/how-to-install-norgate-data-updater-on-ubuntu">
-                How to install Norgate Data Updater on&nbsp;Ubuntu?
+            <a href="https://www.thetradler.com/a-trading-system-skeleton">
+                A trading system&nbsp;skeleton
             </a>
         </h1>
     </header>
@@ -79,28 +79,38 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>I&#8217;m a happy subscriber to NorgateData&#8217;s Futures&nbsp;package.</p>
-<p>However, its software called <span class="caps">NDU</span> only works on Windows and I only work on&nbsp;Ubuntu.</p>
-<p>Tough&nbsp;world.</p>
-<p>Laziness made me consider renting a Windows server that would just run <span class="caps">NDU</span> and rsync the extracted data to my Ubuntu server, but the server + Windows license amount to 50% of the cost of the&nbsp;data.</p>
-<p>I made it a point to not be lazy and stay cheap. Thanks to Wine, I was able to make <span class="caps">NDU</span> work on my Ubuntu machine and, surprisingly, it went rather&nbsp;smoothly.</p>
-<p>Here&#8217;s what I&nbsp;did:</p>
-<p>Install <a href="https://linuxize.com/post/how-to-install-wine-on-ubuntu-20-04/">Wine</a></p>
-<p>Download <a href="https://norgatedata.com/downloads/ndu.4.2.1.50.setup.exe"><span class="caps">NDU</span></a></p>
-<p>Execute this command in the&nbsp;terminal:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;YOUR_PATH_TO/ndu.4.2.1.50.setup.exe&quot;</span>
-</code></pre></div>
-
-<p>Start <span class="caps">NDU</span> as a regular program, enter your credentials, check for updates, and boom! You&#8217;re&nbsp;done.</p>
+            <p>A trading system (<span class="caps">TS</span>) is defined by 3&nbsp;components:</p>
+<ul>
+<li>an entry&nbsp;rule</li>
+<li>a sizing&nbsp;rule</li>
+<li>an exit&nbsp;rule</li>
+</ul>
+<p>A <span class="caps">TS</span> is&nbsp;always:</p>
+<ul>
+<li>unidirectional: long-only or&nbsp;short-only</li>
+<li>applied to a single&nbsp;asset</li>
+<li>executed at no cost at the current bar&#8217;s closing price (ie, no&nbsp;delay)</li>
+</ul>
+<p>From this skeleton I can construct two families of trading&nbsp;systems:</p>
+<ol>
+<li>Binary trading systems (<span class="caps">BTS</span>): a <span class="caps">BTS</span> enters into a position when its entry rule is triggered, and exits it when its exit rule is triggered. The position size is held constant during the life of the trade. Entry rule triggers while a position is on are&nbsp;skipped.</li>
+<li>Continuous trading systems (<span class="caps">CTS</span>): contrary to a <span class="caps">BTS</span>, a <span class="caps">CTS</span> updates its position size and exit rule every time its entry rule is triggered. A <span class="caps">CTS</span> effectively removes the path-dependency associated with <span class="caps">BTS</span> at the cost of a potentially higher&nbsp;turnover.</li>
+</ol>
+<p>These <span class="caps">TS</span> are very&nbsp;flexible:</p>
+<ul>
+<li>a cross-sectional trading system is a collection of individual trading&nbsp;systems</li>
+<li>a buy-and-hold strategy is a long-only unlevered trading system with an entry triggered on the first bar and an exit rule which never&nbsp;triggers</li>
+<li>a long/short trading system is the combination of two <span class="caps">TS</span>, one long and one&nbsp;short</li>
+</ul>
 
 
              
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=How%20to%20install%20Norgate%20Data%20Updater%20on%C2%A0Ubuntu%3F&url=/how-to-install-norgate-data-updater-on-ubuntu&hashtags=market_data,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=/how-to-install-norgate-data-updater-on-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=How%20to%20install%20Norgate%20Data%20Updater%20on%C2%A0Ubuntu%3F&amp;body=/how-to-install-norgate-data-updater-on-ubuntu" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=A%20trading%20system%C2%A0skeleton&url=https%3A//www.thetradler.com/a-trading-system-skeleton&hashtags=trading_system" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thetradler.com/a-trading-system-skeleton" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=A%20trading%20system%C2%A0skeleton&amp;body=https%3A//www.thetradler.com/a-trading-system-skeleton" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -112,52 +122,29 @@
 
 
             <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="/market-data" title="Market data">Market data</a></li>
-<li><a href="/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
-<li><a href="/the-need-for-properly-managing-market-data" title="The need for properly managing market data">The need for properly managing market data</a></li>
-<li><a href="/my-trading-workflow" title="My trading workflow">My trading workflow</a></li>
-</ul>
-<hr />
-</section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="/market-data" title="Previous: Market data">Market data</a></li>
-                <li class="next-article"><a href="/how-to-access-norgatedata-library-from-ubuntu" title="Next: How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a> »</li>
+                <li class="previous-article">« <a href="https://www.thetradler.com/my-trading-workflow" title="Previous: My trading workflow">My trading workflow</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-07-04T00:00:00+02:00">2022-07-04</time>
+            <time itemprop="dateCreated" datetime="2022-07-13T00:00:00+02:00">2022-07-13</time>
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
-            <li >
-            <a href="/market-data" title="Market&nbsp;data">Part 1: Market&nbsp;data</a>
-            </li>
             <li  class="active-part">
-            Part 2: How to install Norgate Data Updater on&nbsp;Ubuntu?
-            </li>
-            <li >
-            <a href="/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from&nbsp;Ubuntu?">Part 3: How to access norgatedata library from&nbsp;Ubuntu?</a>
-            </li>
-            <li >
-            <a href="/the-need-for-properly-managing-market-data" title="The need for properly managing market&nbsp;data">Part 4: The need for properly managing market&nbsp;data</a>
+            Part 1: A trading system&nbsp;skeleton
             </li>
     </ul>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#market_data-ref">market_data</a>
+            <a class="category-link" href="https://www.thetradler.com/categories.html#trading_system-ref">trading_system</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags.html#futures-ref">futures
-                    <span class="superscript">4</span>
-</a></li>
-                <li><a href="/tags.html#market_data-ref">market_data
-                    <span class="superscript">4</span>
+                <li><a href="https://www.thetradler.com/tags.html#trading_system-ref">trading_system
+                    <span class="superscript">1</span>
 </a></li>
             </ul>
 <h4>Contact</h4>
@@ -262,7 +249,7 @@
     </div>
 </footer>            <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script src="https://www.thetradler.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
         <script>
             function validateForm(query)
             {
