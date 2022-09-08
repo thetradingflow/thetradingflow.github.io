@@ -87,31 +87,37 @@
 <p>Here&#8217;s what I did, assuming you already have Wine and <span class="caps">NDU</span> installed and running on your Ubuntu&nbsp;machine:</p>
 <p>Download <a href="https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe">Windows x86-64 executable&nbsp;installer</a></p>
 <p>Open your Ubuntu terminal and&nbsp;run:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;YOUR_PATH_TO/python-3.7.0-amd64.exe&quot;</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>wine <span class="s2">&quot;YOUR_PATH_TO/python-3.7.0-amd64.exe&quot;</span>
+</pre></div>
+
 
 <p>Find the location of the python executable. Mine is installed&nbsp;here:</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37&quot;</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37&quot;</span>
+</pre></div>
+
 
 <p>Run this command (don&#8217;t forget to replace the path with your&nbsp;own):</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install --upgrade pip
-</code></pre></div>
+<div class="highlight"><pre><span></span>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install --upgrade pip
+</pre></div>
+
 
 <p>I&#8217;m not sure if you need to upgrade pip but that&#8217;s what I&nbsp;did.</p>
 <p>Run this&nbsp;command:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install norgatedata
-</code></pre></div>
+<div class="highlight"><pre><span></span>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span> -m pip install norgatedata
+</pre></div>
+
 
 <p>Both Python 3.7 and the norgatedata package are installed. Run&nbsp;python:</p>
-<div class="highlight"><pre><span></span><code>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>wine <span class="s2">&quot;/home/thetradler/.wine/drive_c/users/amp/Local Settings/Application Data/Programs/Python/Python37/python.exe&quot;</span>
+</pre></div>
+
 
 <p>Run this code. If you have access to the <span class="caps">API</span>, it won&#8217;t&nbsp;fail:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">norgadatedata</span> <span class="k">as</span> <span class="nn">nd</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">norgadatedata</span> <span class="k">as</span> <span class="nn">nd</span>
 
 <span class="n">nd</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="s2">&quot;CL-2020Z&quot;</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>It worked on my machine. Hope it will on&nbsp;yours.</p>
 
@@ -182,9 +188,6 @@
                     <span class="superscript">4</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
-<div id="sidebar-social-link">
-</div>
             
 
 
