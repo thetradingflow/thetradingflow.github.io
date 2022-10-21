@@ -4,203 +4,203 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://www.thetradler.com/</loc>
-<lastmod>2022-10-21T17:16:49-00:00</lastmod>
+<loc>/</loc>
+<lastmod>2022-10-21T17:19:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tags.html</loc>
-<lastmod>2022-10-21T17:16:49-00:00</lastmod>
+<loc>/tags.html</loc>
+<lastmod>2022-10-21T17:19:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/categories.html</loc>
-<lastmod>2022-10-21T17:16:49-00:00</lastmod>
+<loc>/categories.html</loc>
+<lastmod>2022-10-21T17:19:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/authors.html</loc>
-<lastmod>2022-10-21T17:16:49-00:00</lastmod>
+<loc>/authors.html</loc>
+<lastmod>2022-10-21T17:19:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/archives.html</loc>
-<lastmod>2022-10-21T17:16:49-00:00</lastmod>
+<loc>/archives.html</loc>
+<lastmod>2022-10-21T17:19:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/about</loc>
+<loc>/about</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/futures-trading</loc>
+<loc>/futures-trading</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/leveraging-a-serverless-infrastructure</loc>
+<loc>/leveraging-a-serverless-infrastructure</loc>
 <lastmod>2022-10-21T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/managing-instruments</loc>
+<loc>/managing-instruments</loc>
 <lastmod>2022-09-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/managing-trading-systems-and-committees</loc>
+<loc>/managing-trading-systems-and-committees</loc>
 <lastmod>2022-09-08T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/trading-system-committee</loc>
+<loc>/trading-system-committee</loc>
 <lastmod>2022-09-08T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/anatomy-of-a-trading-system</loc>
+<loc>/anatomy-of-a-trading-system</loc>
 <lastmod>2022-07-15T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/signal-generator</loc>
+<loc>/signal-generator</loc>
 <lastmod>2022-07-15T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/my-trading-workflow</loc>
+<loc>/my-trading-workflow</loc>
 <lastmod>2022-07-13T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/the-need-for-properly-managing-market-data</loc>
+<loc>/the-need-for-properly-managing-market-data</loc>
 <lastmod>2022-07-12T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu</loc>
+<loc>/how-to-access-norgatedata-library-from-ubuntu</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu</loc>
+<loc>/how-to-install-norgate-data-updater-on-ubuntu</loc>
 <lastmod>2022-07-04T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/market-data</loc>
+<loc>/market-data</loc>
 <lastmod>2022-07-01T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/category/market_data.html</loc>
+<loc>/category/market_data.html</loc>
 <lastmod>2022-07-12T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/category/signal_generator.html</loc>
+<loc>/category/signal_generator.html</loc>
 <lastmod>2022-09-11T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/category/trading_workflow.html</loc>
+<loc>/category/trading_workflow.html</loc>
 <lastmod>2022-10-21T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/infrastructure.html</loc>
+<loc>/tag/infrastructure.html</loc>
 <lastmod>2022-10-21T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/trading_workflow.html</loc>
+<loc>/tag/trading_workflow.html</loc>
 <lastmod>2022-10-21T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/signal_generator.html</loc>
+<loc>/tag/signal_generator.html</loc>
 <lastmod>2022-09-11T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/trading_system.html</loc>
+<loc>/tag/trading_system.html</loc>
 <lastmod>2022-09-08T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/committee.html</loc>
+<loc>/tag/committee.html</loc>
 <lastmod>2022-09-08T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/futures.html</loc>
+<loc>/tag/futures.html</loc>
 <lastmod>2022-07-13T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/market_data.html</loc>
+<loc>/tag/market_data.html</loc>
 <lastmod>2022-07-12T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.thetradler.com/author/the-tradler.html</loc>
+<loc>/author/the-tradler.html</loc>
 <lastmod>2022-10-21T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>

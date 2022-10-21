@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="https://www.thetradler.com/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://www.thetradler.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -18,7 +18,7 @@
 <meta name="keywords" content="signal_generator, signal_generator, " />
 
 <meta property="og:title" content="Managing instruments "/>
-<meta property="og:url" content="https://www.thetradler.com/managing-instruments" />
+<meta property="og:url" content="/managing-instruments" />
 <meta property="og:description" content="Instruments are classed into two groups: tradeable non-tradeable Tradeable instruments¶ Tradeable instruments are actual instruments such as: futures contracts currencies stocks option contracts cryptocurrencies … These are the instruments that can be traded in the real world by placing orders to the market place. Non-tradeable instruments¶ Non-tradeable instruments are virtual instruments …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
@@ -42,20 +42,20 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://www.thetradler.com/"><span class=site-name>The Tradler</span></a>
+                        <a class="brand" href="/"><span class=site-name>The Tradler</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://www.thetradler.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://www.thetradler.com/about">About</a></li>
-                                <li ><a href="https://www.thetradler.com/futures-trading">Futures&nbsp;Trading</a></li>
-                                <li ><a href="https://www.thetradler.com/categories.html">Categories</a></li>
-                                <li ><a href="https://www.thetradler.com/tags.html">Tags</a></li>
-                                <li ><a href="https://www.thetradler.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://www.thetradler.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/about">About</a></li>
+                                <li ><a href="/futures-trading">Futures&nbsp;Trading</a></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.thetradler.com/managing-instruments">
+            <a href="/managing-instruments">
                 Managing&nbsp;instruments
             </a>
         </h1>
@@ -117,7 +117,7 @@
 <p>For most futures projects, the path taken by QuantConnect is not worth it in my opinion: there is an increase in data risk (ie, bad data influencing the simulation), a large increase in complexity (more data to manage properly), and a decrease in performance (slower). To its credit however, this is the added value the platform provides to its users by managing the data and infrastructure for&nbsp;them.</p>
 <p>In the tradler&#8217;s toolbox, the <code>signal_generator</code> module doesn&#8217;t care or even know whether instruments are tradeable or non-tradeable. The decision to choose one or the other is abstracted away behind the class <code>Instrument</code>. At the moment I exclusively rely on a continuous futures implementation which back-adjusts the futures <span class="caps">OHLC</span> prices using the difference&nbsp;method.</p>
 <p>The instrument workflow looks like&nbsp;this:</p>
-<p><img alt="instrument-flow" src="https://www.thetradler.com/actual-virtual-instruments.png"></p>
+<p><img alt="instrument-flow" src="/actual-virtual-instruments.png"></p>
 <p>Virtual instruments (ie, continuous futures) are built from actual instruments and are fed into the simulation program which returns a model portfolio of virtual instruments. This model portfolio is then converted to a model portfolio of actual instruments which can be fed into the <code>order_engine</code> module.</p>
 
 
@@ -125,8 +125,8 @@
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=Managing%C2%A0instruments&url=https%3A//www.thetradler.com/managing-instruments&hashtags=signal_generator" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="mailto:?subject=Managing%C2%A0instruments&amp;body=https%3A//www.thetradler.com/managing-instruments" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Managing%C2%A0instruments&url=/managing-instruments&hashtags=signal_generator" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="mailto:?subject=Managing%C2%A0instruments&amp;body=/managing-instruments" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -141,18 +141,18 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://www.thetradler.com/anatomy-of-a-trading-system" title="Anatomy of a trading system">Anatomy of a trading system</a></li>
-<li><a href="https://www.thetradler.com/signal-generator" title="Signal generator">Signal generator</a></li>
-<li><a href="https://www.thetradler.com/managing-trading-systems-and-committees" title="Managing trading systems and committees">Managing trading systems and committees</a></li>
-<li><a href="https://www.thetradler.com/trading-system-committee" title="Trading system committee">Trading system committee</a></li>
+<li><a href="/anatomy-of-a-trading-system" title="Anatomy of a trading system">Anatomy of a trading system</a></li>
+<li><a href="/signal-generator" title="Signal generator">Signal generator</a></li>
+<li><a href="/managing-trading-systems-and-committees" title="Managing trading systems and committees">Managing trading systems and committees</a></li>
+<li><a href="/trading-system-committee" title="Trading system committee">Trading system committee</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.thetradler.com/managing-trading-systems-and-committees" title="Previous: Managing trading systems and committees">Managing trading systems and committees</a></li>
-                <li class="next-article"><a href="https://www.thetradler.com/leveraging-a-serverless-infrastructure" title="Next: Leveraging a serverless infrastructure">Leveraging a serverless infrastructure</a> »</li>
+                <li class="previous-article">« <a href="/managing-trading-systems-and-committees" title="Previous: Managing trading systems and committees">Managing trading systems and committees</a></li>
+                <li class="next-article"><a href="/leveraging-a-serverless-infrastructure" title="Next: Leveraging a serverless infrastructure">Leveraging a serverless infrastructure</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -163,26 +163,26 @@
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
             <li >
-            <a href="https://www.thetradler.com/signal-generator" title="Signal&nbsp;generator">Part 1: Signal&nbsp;generator</a>
+            <a href="/signal-generator" title="Signal&nbsp;generator">Part 1: Signal&nbsp;generator</a>
             </li>
             <li >
-            <a href="https://www.thetradler.com/anatomy-of-a-trading-system" title="Anatomy of a trading&nbsp;system">Part 2: Anatomy of a trading&nbsp;system</a>
+            <a href="/anatomy-of-a-trading-system" title="Anatomy of a trading&nbsp;system">Part 2: Anatomy of a trading&nbsp;system</a>
             </li>
             <li >
-            <a href="https://www.thetradler.com/trading-system-committee" title="Trading system&nbsp;committee">Part 3: Trading system&nbsp;committee</a>
+            <a href="/trading-system-committee" title="Trading system&nbsp;committee">Part 3: Trading system&nbsp;committee</a>
             </li>
             <li >
-            <a href="https://www.thetradler.com/managing-trading-systems-and-committees" title="Managing trading systems and&nbsp;committees">Part 4: Managing trading systems and&nbsp;committees</a>
+            <a href="/managing-trading-systems-and-committees" title="Managing trading systems and&nbsp;committees">Part 4: Managing trading systems and&nbsp;committees</a>
             </li>
             <li  class="active-part">
             Part 5: Managing&nbsp;instruments
             </li>
     </ul>
             <h4>Category</h4>
-            <a class="category-link" href="https://www.thetradler.com/categories.html#signal_generator-ref">signal_generator</a>
+            <a class="category-link" href="/categories.html#signal_generator-ref">signal_generator</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://www.thetradler.com/tags.html#signal_generator-ref">signal_generator
+                <li><a href="/tags.html#signal_generator-ref">signal_generator
                     <span class="superscript">5</span>
 </a></li>
             </ul>
@@ -285,7 +285,7 @@
     </div>
 </footer>            <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://www.thetradler.com/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script src="/theme/js/elegant.prod.9e9d5ce754.js"></script>
         <script>
             function validateForm(query)
             {
