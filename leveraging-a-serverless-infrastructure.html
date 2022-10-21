@@ -15,18 +15,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="trading_workflow, futures, trading_workflow, " />
+<meta name="keywords" content="infrastructure, trading_workflow, trading_workflow, " />
 
-<meta property="og:title" content="My trading workflow "/>
-<meta property="og:url" content="https://www.thetradler.com/my-trading-workflow" />
-<meta property="og:description" content="My trading workflow is composed of 4 main modules, each with a clear set of responsibilities: market_data: updates the market data database. It extracts forex and futures data and metadata from IB Gateway and updates the production database. account_data: updates the account data database. It extracts the account’s capital …" />
+<meta property="og:title" content="Leveraging a serverless infrastructure "/>
+<meta property="og:url" content="https://www.thetradler.com/leveraging-a-serverless-infrastructure" />
+<meta property="og:description" content="I am exploring going serverless for some parts of my trading infrastructure. What’s the situation? I’ve been renting a cheap VPS from OVH at 3.60 EUR/month to run a fully automated intraday trading program for digital assets for a couple of years now. In August 2022 …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
-<meta property="og:article:published_time" content="2022-07-13T00:00:00+02:00" />
-<meta name="twitter:title" content="My trading workflow ">
-<meta name="twitter:description" content="My trading workflow is composed of 4 main modules, each with a clear set of responsibilities: market_data: updates the market data database. It extracts forex and futures data and metadata from IB Gateway and updates the production database. account_data: updates the account data database. It extracts the account’s capital …">
+<meta property="og:article:published_time" content="2022-10-21T00:00:00+02:00" />
+<meta name="twitter:title" content="Leveraging a serverless infrastructure ">
+<meta name="twitter:description" content="I am exploring going serverless for some parts of my trading infrastructure. What’s the situation? I’ve been renting a cheap VPS from OVH at 3.60 EUR/month to run a fully automated intraday trading program for digital assets for a couple of years now. In August 2022 …">
 
-        <title>My trading workflow  · The Tradler
+        <title>Leveraging a serverless infrastructure  · The Tradler
 </title>
 
 
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://www.thetradler.com/my-trading-workflow">
-                My trading&nbsp;workflow
+            <a href="https://www.thetradler.com/leveraging-a-serverless-infrastructure">
+                Leveraging a serverless&nbsp;infrastructure
             </a>
         </h1>
     </header>
@@ -79,29 +79,34 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>My trading workflow is composed of 4 main modules, each with a clear set of&nbsp;responsibilities:</p>
+            <p>I am exploring going serverless for some parts of my trading&nbsp;infrastructure.</p>
+<p><strong>What&#8217;s the&nbsp;situation?</strong></p>
+<p>I&#8217;ve been renting a cheap <span class="caps">VPS</span> from <span class="caps">OVH</span> at 3.60 <span class="caps">EUR</span>/month to run a fully automated intraday trading program for digital assets for a couple of years now. In August 2022, I&#8217;ve launched a Futures trading program which is currently running on my desktop computer at home. I&#8217;d like to automate it and run it in the cloud and get my life&nbsp;back.</p>
+<p>My current <span class="caps">VPS</span> is ultra cheap and not powerful. Running multiple programs in parallel, especially running historical simulations, might crash it at times. I could rent a more expensive <span class="caps">VPS</span>, but I prefer to remain cheap and decided to try leveraging severless&nbsp;functions.</p>
+<p><strong>Infrastructure&nbsp;design</strong></p>
+<p>Keep the <span class="caps">VPS</span> to run the following programs&nbsp;24/7:</p>
 <ul>
-<li><code>market_data</code>: updates the market data database. It extracts forex and futures data and metadata from <span class="caps">IB</span> Gateway and updates the production&nbsp;database.</li>
-<li><code>account_data</code>: updates the account data database. It extracts the account&#8217;s capital, P&amp;L, orders, transactions, and positions from the broker. It reconciles these values against internal calculations for&nbsp;accuracy.</li>
-<li><code>signal_generator</code>: ingests market data and produces a model portfolio, ie a target weight for each continuous futures in its&nbsp;universe.</li>
-<li><code>order_engine</code>: ingests the model portfolio, market and account data and produces a set of orders to submit to the broker. These orders include roll and rebalancing orders for the following trading&nbsp;day.</li>
+<li>a workflow&nbsp;orchestrator</li>
+<li>a&nbsp;dashboard</li>
+<li>broker&nbsp;clients</li>
+<li>market data&nbsp;clients</li>
 </ul>
-<p>Each module is executed at the end of each trading day after markets are closed at 4:15 pm <span class="caps">EST</span>.</p>
-<p>Whenever a critical event is triggered by any of the 4 modules, I&#8217;m alerted on my phone and the workflow execution is paused until I manually resume it. Otherwise each module produces a report for the given day that I can quickly go through to see if anything out of the ordinary happened. Orders are then submitted automatically to the&nbsp;broker.</p>
-<p>In the future, I plan on adding a couple of&nbsp;modules:</p>
+<p>Move the <code>signal_generator</code> module to <span class="caps">AWS</span> Lambda and create a lambda function for each strategy/trading system. Use <span class="caps">AWS</span> S3 to share data between <span class="caps">AWS</span> Lambda and the <span class="caps">VPS</span>. The workflow orchestrator manages the execution (scheduled <span class="amp">&amp;</span> event-driven) of the serverless and local&nbsp;programs.</p>
+<p><strong>Benefits</strong></p>
 <ul>
-<li><code>execution_engine</code>: an event-driven program whose responsibility will be to improve the execution of the orders and provide information about the quality of&nbsp;execution.</li>
-<li><code>reporting_engine</code>: generates additional reports for monitoring the health of the system (eg, rolling statistics on portfolio data, accounting/tax liability, market liquidity, performance of individual models, <span class="caps">IT</span> stuff like memory/cpu/hard-drive space usage of the server,&nbsp;etc.).</li>
+<li>free up resources for the programs running 24/7 on my cheap <span class="caps">VPS</span></li>
+<li>infinitely scalable and parallel execution for historical&nbsp;simulations</li>
+<li>manage both trading programs (futures and digital assets) together, and opens the possibility to add more&nbsp;programs</li>
+<li>cheap?</li>
 </ul>
-<p>It is simple and it works&nbsp;well.</p>
 
 
              
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=My%20trading%C2%A0workflow&url=https%3A//www.thetradler.com/my-trading-workflow&hashtags=trading_workflow,futures" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="mailto:?subject=My%20trading%C2%A0workflow&amp;body=https%3A//www.thetradler.com/my-trading-workflow" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Leveraging%20a%20serverless%C2%A0infrastructure&url=https%3A//www.thetradler.com/leveraging-a-serverless-infrastructure&hashtags=infrastructure,trading_workflow" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="mailto:?subject=Leveraging%20a%20serverless%C2%A0infrastructure&amp;body=https%3A//www.thetradler.com/leveraging-a-serverless-infrastructure" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -116,40 +121,36 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://www.thetradler.com/how-to-install-norgate-data-updater-on-ubuntu" title="How to install Norgate Data Updater on Ubuntu?">How to install Norgate Data Updater on Ubuntu?</a></li>
-<li><a href="https://www.thetradler.com/how-to-access-norgatedata-library-from-ubuntu" title="How to access norgatedata library from Ubuntu?">How to access norgatedata library from Ubuntu?</a></li>
-<li><a href="https://www.thetradler.com/the-need-for-properly-managing-market-data" title="The need for properly managing market data">The need for properly managing market data</a></li>
-<li><a href="https://www.thetradler.com/leveraging-a-serverless-infrastructure" title="Leveraging a serverless infrastructure">Leveraging a serverless infrastructure</a></li>
+<li><a href="https://www.thetradler.com/my-trading-workflow" title="My trading workflow">My trading workflow</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://www.thetradler.com/the-need-for-properly-managing-market-data" title="Previous: The need for properly managing market data">The need for properly managing market data</a></li>
-                <li class="next-article"><a href="https://www.thetradler.com/signal-generator" title="Next: Signal generator">Signal generator</a> »</li>
+                <li class="previous-article">« <a href="https://www.thetradler.com/managing-instruments" title="Previous: Managing instruments">Managing instruments</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-07-13T00:00:00+02:00">2022-07-13</time>
+            <time itemprop="dateCreated" datetime="2022-10-21T00:00:00+02:00">2022-10-21</time>
         <h4>More In This Series</h4>
     <ul class="multi-parts-list">
-            <li  class="active-part">
-            Part 1: My trading&nbsp;workflow
-            </li>
             <li >
-            <a href="https://www.thetradler.com/leveraging-a-serverless-infrastructure" title="Leveraging a serverless&nbsp;infrastructure">Part 2: Leveraging a serverless&nbsp;infrastructure</a>
+            <a href="https://www.thetradler.com/my-trading-workflow" title="My trading&nbsp;workflow">Part 1: My trading&nbsp;workflow</a>
+            </li>
+            <li  class="active-part">
+            Part 2: Leveraging a serverless&nbsp;infrastructure
             </li>
     </ul>
             <h4>Category</h4>
             <a class="category-link" href="https://www.thetradler.com/categories.html#trading_workflow-ref">trading_workflow</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://www.thetradler.com/tags.html#futures-ref">futures
-                    <span class="superscript">4</span>
+                <li><a href="https://www.thetradler.com/tags.html#infrastructure-ref">infrastructure
+                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://www.thetradler.com/tags.html#trading_workflow-ref">trading_workflow
                     <span class="superscript">2</span>

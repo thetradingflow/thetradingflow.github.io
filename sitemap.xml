@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.thetradler.com/</loc>
-<lastmod>2022-09-11T10:48:00-00:00</lastmod>
+<lastmod>2022-10-21T17:16:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.thetradler.com/tags.html</loc>
-<lastmod>2022-09-11T10:48:00-00:00</lastmod>
+<lastmod>2022-10-21T17:16:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.thetradler.com/categories.html</loc>
-<lastmod>2022-09-11T10:48:00-00:00</lastmod>
+<lastmod>2022-10-21T17:16:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.thetradler.com/authors.html</loc>
-<lastmod>2022-09-11T10:48:00-00:00</lastmod>
+<lastmod>2022-10-21T17:16:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.thetradler.com/archives.html</loc>
-<lastmod>2022-09-11T10:48:00-00:00</lastmod>
+<lastmod>2022-10-21T17:16:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -48,6 +48,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.thetradler.com/futures-trading</loc>
 <lastmod>2022-07-11T00:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.thetradler.com/leveraging-a-serverless-infrastructure</loc>
+<lastmod>2022-10-21T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -138,7 +145,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.thetradler.com/category/trading_workflow.html</loc>
-<lastmod>2022-07-13T00:00:00+00:53</lastmod>
+<lastmod>2022-10-21T00:00:00+00:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.thetradler.com/tag/infrastructure.html</loc>
+<lastmod>2022-10-21T00:00:00+00:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.thetradler.com/tag/trading_workflow.html</loc>
+<lastmod>2022-10-21T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -165,13 +186,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://www.thetradler.com/tag/trading_workflow.html</loc>
-<lastmod>2022-07-13T00:00:00+00:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://www.thetradler.com/tag/futures.html</loc>
 <lastmod>2022-07-13T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
@@ -187,7 +201,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.thetradler.com/author/the-tradler.html</loc>
-<lastmod>2022-09-11T00:00:00+00:53</lastmod>
+<lastmod>2022-10-21T00:00:00+00:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
