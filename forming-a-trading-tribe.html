@@ -15,18 +15,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="infrastructure, trading_workflow, trading_workflow, " />
+<meta name="keywords" content="tribe, research, " />
 
-<meta property="og:title" content="Leveraging a serverless infrastructure "/>
-<meta property="og:url" content="/leveraging-a-serverless-infrastructure" />
-<meta property="og:description" content="I am exploring going serverless for some parts of my trading infrastructure. What’s the situation? I’ve been renting a cheap VPS from OVH at 3.60 EUR/month to run a fully automated intraday trading program for digital assets for a couple of years now. In August 2022 …" />
+<meta property="og:title" content="Forming a trading tribe "/>
+<meta property="og:url" content="/forming-a-trading-tribe" />
+<meta property="og:description" content="One thing I miss from my time working at a hedge fund is the interactions with like-minded and smart individuals. Openly sharing ideas and research led to many interesting insights for everyone involved thanks to the different perspectives and skill sets people brought to the table. I’d like to …" />
 <meta property="og:site_name" content="The Tradler" />
 <meta property="og:article:author" content="The Tradler" />
 <meta property="og:article:published_time" content="2022-10-21T00:00:00+02:00" />
-<meta name="twitter:title" content="Leveraging a serverless infrastructure ">
-<meta name="twitter:description" content="I am exploring going serverless for some parts of my trading infrastructure. What’s the situation? I’ve been renting a cheap VPS from OVH at 3.60 EUR/month to run a fully automated intraday trading program for digital assets for a couple of years now. In August 2022 …">
+<meta name="twitter:title" content="Forming a trading tribe ">
+<meta name="twitter:description" content="One thing I miss from my time working at a hedge fund is the interactions with like-minded and smart individuals. Openly sharing ideas and research led to many interesting insights for everyone involved thanks to the different perspectives and skill sets people brought to the table. I’d like to …">
 
-        <title>Leveraging a serverless infrastructure  · The Tradler
+        <title>Forming a trading tribe  · The Tradler
 </title>
 
 
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="/leveraging-a-serverless-infrastructure">
-                Leveraging a serverless&nbsp;infrastructure
+            <a href="/forming-a-trading-tribe">
+                Forming a trading&nbsp;tribe
             </a>
         </h1>
     </header>
@@ -79,34 +79,36 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>I am exploring going serverless for some parts of my trading&nbsp;infrastructure.</p>
-<p><strong>What&#8217;s the&nbsp;situation?</strong></p>
-<p>I&#8217;ve been renting a cheap <span class="caps">VPS</span> from <span class="caps">OVH</span> at 3.60 <span class="caps">EUR</span>/month to run a fully automated intraday trading program for digital assets for a couple of years now. In August 2022, I&#8217;ve launched a Futures trading program which is currently running on my desktop computer at home. I&#8217;d like to automate it and run it in the cloud and get my life&nbsp;back.</p>
-<p>My current <span class="caps">VPS</span> is ultra cheap and not powerful. Running multiple programs in parallel, especially running historical simulations, might crash it at times. I could rent a more expensive <span class="caps">VPS</span>, but I prefer to remain cheap and decided to try leveraging severless&nbsp;functions.</p>
-<p><strong>Infrastructure&nbsp;design</strong></p>
-<p>Keep the <span class="caps">VPS</span> to run the following programs&nbsp;24/7:</p>
+            <p>One thing I miss from my time working at a hedge fund is the interactions with like-minded and smart individuals. Openly sharing ideas and research led to many interesting insights for everyone involved thanks to the different perspectives and skill sets people brought to the&nbsp;table.</p>
+<p>I&#8217;d like to recreate a similar environment for a bunch of independent traders to get the same benefits minus the bullshit/constraints inherent to an investment firm. By sharing research and discussing ideas in a closed environment, with other traders we get to know and trust, chances are that we would all greatly benefit from it. We are small fishes in a huge ocean here, so the risk that we&#8217;re eating in each other&#8217;s plate is ridiculously&nbsp;low.</p>
+<p><strong>Who?</strong></p>
 <ul>
-<li>a workflow&nbsp;orchestrator</li>
-<li>a&nbsp;dashboard</li>
-<li>broker&nbsp;clients</li>
-<li>market data&nbsp;clients</li>
+<li>independent traders only: no compliance or <span class="caps">NDA</span> bullshit, thank&nbsp;you</li>
+<li>must have experience in research/trading: industry experience not necessary, just experience doing&nbsp;it</li>
+<li>must be trading with a solid capital base (&gt; 100k <span class="caps">USD</span>) so we are generally operating in the same&nbsp;context</li>
+<li>ideally working in Python to make it easier to&nbsp;collaborate</li>
+<li>group of 3 to 7&nbsp;people</li>
 </ul>
-<p>Move the <code>signal_generator</code> module to <span class="caps">AWS</span> Lambda and create a Lambda function for each strategy/trading system. Use <span class="caps">AWS</span> S3 to share data between <span class="caps">AWS</span> services and the <span class="caps">VPS</span>. The workflow orchestrator manages the execution (scheduled <span class="amp">&amp;</span> event-driven) of the serverless and local&nbsp;programs.</p>
-<p><strong>Benefits</strong></p>
+<p><strong>How?</strong></p>
+<p>A private Discord server is neat for most interactions. All members would have equal rights and the server should be owned by all of us and not just by me. Add a GitHub repo for some code/data sharing. We&#8217;ll figure out the best way to get&nbsp;organized.</p>
+<p><strong>Purpose?</strong></p>
 <ul>
-<li>free up resources for the programs running 24/7 on my cheap <span class="caps">VPS</span></li>
-<li>infinitely scalable and parallel execution for historical&nbsp;simulations</li>
-<li>consolidate trading programs (futures and digital assets) and open the possibility to add more&nbsp;programs</li>
-<li>cheap? Likely cheaper than running a computer 24/7 at home given electricity prices in&nbsp;Europe</li>
+<li>helping each other trading better and making more&nbsp;money</li>
+<li>collaborating on common research&nbsp;projects</li>
+<li>it&#8217;s not required to share everything, but all members must be contributing&nbsp;positively</li>
+<li>getting&nbsp;feedbacks</li>
+<li>having some&nbsp;fun</li>
 </ul>
+<p>Nothing is written in stone obviously, these are just initial&nbsp;ideas.</p>
+<p>If you&#8217;re interested and would like to get in touch, please send me a message on Twitter&nbsp;(@thetradler).</p>
 
 
              
  
                 <p id="post-share-links">
     Like this post? Share on
-      <a href="https://twitter.com/intent/tweet?text=Leveraging%20a%20serverless%C2%A0infrastructure&url=/leveraging-a-serverless-infrastructure&hashtags=infrastructure,trading_workflow" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="mailto:?subject=Leveraging%20a%20serverless%C2%A0infrastructure&amp;body=/leveraging-a-serverless-infrastructure" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Forming%20a%20trading%C2%A0tribe&url=/forming-a-trading-tribe&hashtags=tribe" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="mailto:?subject=Forming%20a%20trading%C2%A0tribe&amp;body=/forming-a-trading-tribe" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -118,18 +120,10 @@
 
 
             <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="/my-trading-workflow" title="My trading workflow">My trading workflow</a></li>
-</ul>
-<hr />
-</section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="/managing-instruments" title="Previous: Managing instruments">Managing instruments</a></li>
-                <li class="next-article"><a href="/forming-a-trading-tribe" title="Next: Forming a trading tribe">Forming a trading tribe</a> »</li>
+                <li class="previous-article">« <a href="/leveraging-a-serverless-infrastructure" title="Previous: Leveraging a serverless infrastructure">Leveraging a serverless infrastructure</a></li>
             </ul>
             </nav>
             </aside>
@@ -137,24 +131,12 @@
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2022-10-21T00:00:00+02:00">2022-10-21</time>
-        <h4>More In This Series</h4>
-    <ul class="multi-parts-list">
-            <li >
-            <a href="/my-trading-workflow" title="My trading&nbsp;workflow">Part 1: My trading&nbsp;workflow</a>
-            </li>
-            <li  class="active-part">
-            Part 2: Leveraging a serverless&nbsp;infrastructure
-            </li>
-    </ul>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#trading_workflow-ref">trading_workflow</a>
+            <a class="category-link" href="/categories.html#research-ref">research</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="/tags.html#infrastructure-ref">infrastructure
+                <li><a href="/tags.html#tribe-ref">tribe
                     <span class="superscript">1</span>
-</a></li>
-                <li><a href="/tags.html#trading_workflow-ref">trading_workflow
-                    <span class="superscript">2</span>
 </a></li>
             </ul>
             
